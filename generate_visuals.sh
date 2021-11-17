@@ -1,0 +1,13 @@
+# to generate annotated images
+# pass command line arguments in order result_dir, result_json, demo_json
+#echo $1
+#echo $2
+#echo $3
+#python vidor_eval.py $1 $2 $3
+
+
+python vidor_eval.py output/VANILLA_3D_CONV_RESNEXT_LABEL_WEIGHTS_UNION_FEAT  all_results_vidor_checkpoint_epoch_00004.pyth_proposal_less-168-examples_demo-all.json  output/VANILLA_3D_CONV_RESNEXT_LABEL_WEIGHTS_UNION_FEAT/all_results_vidor_checkpoint_epoch_00004.pyth_proposal_less-168-examples_demo-all.json VANILLA
+
+python vidor_eval.py output/SLOWFAST_32x2_R50_SHORT_SCRATCH_EVAL_GT_trajectory-toipool all_results_vidor_checkpoint_epoch_00020.pyth_proposal_less-168-examples_demo-all.json  output/SLOWFAST_32x2_R50_SHORT_SCRATCH_EVAL_GT_trajectory-toipool/all_results_vidor_checkpoint_epoch_00020.pyth_proposal_less-168-examples_demo-all.json SLOWFAST
+
+python gt_visuals.py output/SLOWFAST_32x2_R50_SHORT_SCRATCH_EVAL_GT_trajectory-toipool all_results_vidor_checkpoint_epoch_00020.pyth_proposal_less-168-examples_demo-all.json  output/SLOWFAST_32x2_R50_SHORT_SCRATCH_EVAL_GT_trajectory-toipool/all_results_vidor_checkpoint_epoch_00020.pyth_proposal_less-168-examples_demo-all.json

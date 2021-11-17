@@ -1,0 +1,7 @@
+#CUDA_VISIBLE_DEVICES=1 python tools/run_lighten_feat_gen_detect.py --cfg configs/vidor/LIGHTEN_GEN_RESNEXT101_FEAT.yaml DATA.PATH_TO_DATA_DIR slowfast/datasets/vidor NUM_GPUS 1 DATA_LOADER.NUM_WORKERS 0 TRAIN.BATCH_SIZE 1 TEST.BATCH_SIZE 1 LOG_MODEL_INFO False TRAIN.ENABLE True VIDOR.TEST_DEBUG False
+
+# generate resnext101 features
+CUDA_VISIBLE_DEVICES=2 python tools/run_lighten_feat_gen.py --cfg configs/vidor/LIGHTEN_GEN_RESNEXT101_FEAT.yaml DATA.PATH_TO_DATA_DIR slowfast/datasets/vidor NUM_GPUS 1 DATA_LOADER.NUM_WORKERS 0 TRAIN.BATCH_SIZE 1 TEST.BATCH_SIZE 1 LOG_MODEL_INFO False TRAIN.ENABLE True VIDOR.TEST_DEBUG False
+
+# debug feature generator
+#CUDA_VISIBLE_DEVICES=1 python tools/run_lighten_feat_gen.py --cfg configs/vidor/DEBUG_LIGHTEN_GEN_RESNEXT101_FEAT.yaml DATA.PATH_TO_DATA_DIR slowfast/datasets/vidor NUM_GPUS 1 DATA_LOADER.NUM_WORKERS 0 TRAIN.BATCH_SIZE 1 TEST.BATCH_SIZE 1 LOG_MODEL_INFO False TRAIN.ENABLE True VIDOR.TEST_DEBUG False
